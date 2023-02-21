@@ -12,22 +12,6 @@ Commands:
   get [Grass Sword]
 ''')
 
-def showStatus():
-  #print the player's current status
-  print('Find Jake and Defeat the Lich')
-  print('You are in the ' + "kitchen")
-  #print the current inventory
-  print('Inventory : ' + str("grass sword"))
-  #print an item if there is one
-  if "item" in rooms['Kitchen']:
-    print('You see ' + rooms[currentRoom]['BMO'])
-  print("Hey BMO! have you seen Jake?")
-  print("I'm sorry Finn, I have not!")
-#an inventory, which is initially empty
-inventory = []
-
-#a dictionary linking a room to other rooms
-## A dictionary linking a room to other rooms
 rooms = {
 
             'Tree Bark' : {
@@ -47,10 +31,33 @@ rooms = {
             'Garden' : {
                   'north' : 'Dining Room'
                },
-         }
+         }  
+
+currentRoom = 'Tree Bark'
+
+inventory = ['Jake' + 'Grass Sword']
+
+
+def showStatus():
+  #print the player's current status
+  print('Find Jake and Defeat the Lich')
+  print('You are in the ' + "kitchen")
+  #print the current inventory
+  print('Inventory : ' + str("grass sword"))
+  #print an item if there is one
+if "item" in rooms['Kitchen']:
+  print('You see ' + rooms[currentRoom]['"BMO"'])
+  print("Hey BMO! have you seen Jake?")
+  print("I'm sorry Finn, I have not!")
+#an inventory, which is initially empty
+
+
+#a dictionary linking a room to other rooms
+## A dictionary linking a room to other rooms
+
 
 #start the player in the Hall
-currentRoom = 'Tree Bark'
+
 
 showInstructions()
 
